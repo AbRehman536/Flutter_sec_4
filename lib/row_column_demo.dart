@@ -22,16 +22,17 @@ class RowColumnDemo extends StatelessWidget {
         ],
       ),
       body: Container(
-        color: Colors.yellow,
         width: double.infinity,
+        color: Colors.orange,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
           Text("Abdullah Rehman"),
           Text("25"),
           Text("Rawalpindi"),
-          Text("034012345678"),
+          Text("Pakistan"),
+          Text("0122374623786"),
         ],),
       ),
     );
