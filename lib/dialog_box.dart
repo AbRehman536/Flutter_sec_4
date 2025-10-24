@@ -1,40 +1,39 @@
 import 'package:flutter/material.dart';
 
-class DialogBoxDemo extends StatefulWidget {
+class DialogBoxDemo extends StatelessWidget {
   const DialogBoxDemo({super.key});
 
-  @override
-  State<DialogBoxDemo> createState() => _DialogBoxDemoState();
-}
-
-class _DialogBoxDemoState extends State<DialogBoxDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.arrow_back_ios),
         title: Text("Dialog Box"),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        centerTitle: true,
       ),
-      body: Center(child:
+      body: Column(children: [
+        Image.asset("assets/images/1348431.png"),
         ElevatedButton(onPressed: (){
           showDialog(
-              barrierDismissible: false,
-              context: context, builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text("Message"),
-              content: Text("Thank You!"),
-              actions: [
-                TextButton(onPressed: (){
-                  Navigator.pop(context);
-                }, child: Text("No")),
-                TextButton(onPressed: (){}, child: Text("Yes")),
-              ],
-            );
-          });
-        }, child: Text("Show Dialog Box")),
-        ),
+            barrierDismissible: false,
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("Hello"),
+                  content: Text("Welcome to Flutter"),
+                  actions: [
+                    TextButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, child: Text("No")),
+                    TextButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, child: Text("Yes")),
+                  ],
+                );
+              });
+        }, child: Text("Show Dialog Box"))
+      ],),
     );
   }
 }
