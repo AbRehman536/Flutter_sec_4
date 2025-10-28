@@ -8,6 +8,7 @@ import 'package:flutter_sec_4/floating_action_button.dart';
 import 'package:flutter_sec_4/list_tile_demo.dart';
 import 'package:flutter_sec_4/login_form.dart';
 import 'package:flutter_sec_4/login_form_validation.dart';
+import 'package:flutter_sec_4/multiple_selection.dart';
 import 'package:flutter_sec_4/nested_row_column.dart';
 import 'package:flutter_sec_4/network_image.dart';
 import 'package:flutter_sec_4/row_column_demo.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: BottombarDemo(),
+      home: MultipleSelectionDemo(),
     );
   }
 }
