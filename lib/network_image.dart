@@ -14,8 +14,21 @@ class NetworkImageDemo extends StatelessWidget {
       ),
       body: Column(children: [
         Container(
-            color: Colors.yellow,
-            child: Image.network("https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg",height: 400,width: 500,)),
+          color: Colors.yellow,
+          child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpAh63HncAuJOC6TxWkGLYpS0WwNXswz9MA&s",
+          width: 300,
+            height: 250,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpAh63HncAuJOC6TxWkGLYpS0WwNXswz9MA&s",
+          width: 300,
+            height: 250,
+            fit: BoxFit.cover,
+          ),
+        ),
       ],),
     );
   }

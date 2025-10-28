@@ -8,9 +8,11 @@ class AssetImageDemo extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Asset Image"),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
       ),
     body: Column(children: [
-      Image.asset("assets/images/image 7.png",width: 400,height: 500,),
+      Image.asset("assets/images/download.jpg",height: 300,)
     ],),
     );
   }

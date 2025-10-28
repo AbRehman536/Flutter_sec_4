@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginFormDemo extends StatelessWidget {
-  const LoginFormDemo({super.key});
+class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,41 +19,69 @@ class LoginFormDemo extends StatelessWidget {
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: Column(children: [
-        Text("Login Page",style: TextStyle(fontSize: 25, color: Colors.red),),
-        Padding(
-          padding: const EdgeInsets.only(top: 10,bottom: 20,left: 15,right: 25),
-          child: TextField(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(children: [
+          Text("Welcome to My App",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 30),),
+          TextField(
+            controller: emailController,
             decoration: InputDecoration(
               label: Text("Email"),
-              hintText: 'abdullah@gmail.com',
+              hint: Text("abdullah@gmail.com"),
               prefix: Icon(Icons.email),
-              suffixIcon: Icon(Icons.account_balance),
+              suffixIcon: Icon(Icons.person),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15)
               )
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-          child: TextField(
+          TextField(
+            controller: passwordController,
             decoration: InputDecoration(
                 label: Text("Password"),
-                hintText: '234456564',
+                hint: Text("12345678"),
                 prefix: Icon(Icons.lock),
                 suffixIcon: Icon(Icons.visibility),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20)
+                borderRadius: BorderRadius.circular(15)
               )
             ),
           ),
-        ),
-        ElevatedButton(onPressed: (){}, child: Text("Login")),
-        Text("Don't have account ?"),
-        TextButton(onPressed: (){},
-            child: Text("Sign Up",style: TextStyle(fontSize: 20,color: Colors.red),))
-      ],),
+          SizedBox(
+            width: 150,
+            child: ElevatedButton(onPressed: (){
+              if(emailController.text.isEmpty){
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Email is Empty")));
+                return;
+              }
+              if(passwordController.text.isEmpty){
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Password is Empty")));
+                return ;
+              }
+              if(passwordController.text.length < 8){
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Password must be more than 8 digits")));
+                return;
+              }
+            },style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              )
+            ),
+
+                child: Text("Login")),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Text("Don't have Account ?"),
+            TextButton(onPressed: (){}, child: Text("Sign Up")),
+          ],)
+        ],),
+      ),
     );
   }
 }
