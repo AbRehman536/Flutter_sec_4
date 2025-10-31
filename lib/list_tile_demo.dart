@@ -6,27 +6,31 @@ class ListTileDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
       appBar: AppBar(
-        title: Text("List Tile"),
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-        centerTitle: true,
+        title: Text("Chats"),
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.black,
+        actions: [
+          Icon(Icons.notification_add_outlined),
+          Icon(Icons.menu)
+        ],
       ),
-      body: ListView.builder(
-        itemCount: 8,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            color: Colors.orange,
-            child:
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Abbas"),
-              subtitle: Text("Hello, How are you?"),
-              trailing: Icon(Icons.arrow_forward_ios),
-            ),
-          );
-        },
+      body: Card(
+        color: Colors.yellow,
+        child: ListView.builder(
+          itemCount: 6,
+          itemBuilder: (BuildContext context, int index) {
+            return Card(
+              color: Colors.grey,
+              child: ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Ahmed Tariq"),
+                subtitle: Text("Hello, How are you ?"),
+                trailing: Text("5:10 PM"),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

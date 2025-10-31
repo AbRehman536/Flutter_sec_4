@@ -52,23 +52,24 @@ class _LoginFormValidationDemoState extends State<LoginFormValidationDemo> {
           ),
         ),
         ElevatedButton(onPressed: (){
-          if(emailController.text.isEmpty){
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Email is empty")));
-            return;
-          }
-          if(passwordController.text.isEmpty){
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text("Password is Empty"))
-            );
-            return;
-          }
-          if(passwordController.text.length < 8){
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text("Password should be more than 8 digits"))
-            );
-            return;
-          }
+         if(emailController.text.isEmpty){
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text("Email is empty"))
+           );
+           return;
+         }
+         if(passwordController.text.isEmpty){
+           ScaffoldMessenger.of(context).showSnackBar(
+               SnackBar(content: Text("Password is empty"))
+           );
+           return;
+         }
+         if(passwordController.text.length > 8){
+           ScaffoldMessenger.of(context).showSnackBar(
+               SnackBar(content: Text("Password is less than 8 digits"))
+           );
+           return;
+         }
         }, child: Text("Login")),
         Text("Don't have account ?"),
         TextButton(onPressed: (){},

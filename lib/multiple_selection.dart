@@ -27,19 +27,18 @@ class _MultipleSelectionDemoState extends State<MultipleSelectionDemo> {
               setState(() {
                 if(selectedIndex.contains(index)){
                   selectedIndex.remove(index);
-                }
-                else{
+                }else{
                   selectedIndex.add(index);
                 }
               });
             },
-            tileColor: selectedIndex.contains(index)? Colors.blue :Colors.white,
-            textColor: selectedIndex.contains(index)? Colors.white :Colors.black,
-            iconColor: selectedIndex.contains(index)? Colors.white :Colors.black,
-            leading: Icon(selectedIndex.contains(index) ? Icons.check_box_outlined: Icons.check_box_outline_blank),
-            title: Text("Multiple Selection: $selectedIndex"),
+            tileColor: selectedIndex.contains(index) ? Colors.blue : Colors.white,
+            textColor: selectedIndex.contains(index) ? Colors.white : Colors.black,
+            iconColor: selectedIndex.contains(index) ? Colors.white : Colors.black,
+            leading: Icon(Icons.check_box_outline_blank),
+            title: Text("Multiple: $selectedIndex"),
             subtitle: Text("Index: $index"),
-            trailing: Icon(selectedIndex.contains(index) ? Icons.remove : Icons.add),
+            trailing: Icon(Icons.arrow_forward_ios),
           );
         },
       ),
