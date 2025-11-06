@@ -13,11 +13,13 @@ class _MultipleSelectionDemoState extends State<MultipleSelectionDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios),
         title: Text("Multiple Selection"),
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-        centerTitle: true,
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.black,
+        actions: [
+          Icon(Icons.notification_add_outlined),
+          Icon(Icons.menu)
+        ],
       ),
       body: ListView.builder(
         itemCount: 6,
@@ -32,13 +34,13 @@ class _MultipleSelectionDemoState extends State<MultipleSelectionDemo> {
                 }
               });
             },
-            tileColor: selectedIndex.contains(index) ? Colors.blue : Colors.white,
-            textColor: selectedIndex.contains(index) ? Colors.white : Colors.black,
-            iconColor: selectedIndex.contains(index) ? Colors.white : Colors.black,
-            leading: Icon(Icons.check_box_outline_blank),
-            title: Text("Multiple: $selectedIndex"),
-            subtitle: Text("Index: $index"),
-            trailing: Icon(Icons.arrow_forward_ios),
+            selected: selectedIndex.contains(index),
+            selectedTileColor: Colors.blue,
+            selectedColor: Colors.white,
+            leading: Icon(selectedIndex.contains(index) ? Icons.person_2_outlined : Icons.person),
+            title: Text("Ahmed Tariq,$selectedIndex"),
+            subtitle: Text("Hello, How are you ?,$index"),
+            trailing: Text("5:10 PM"),
           );
         },
       ),

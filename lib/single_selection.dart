@@ -13,11 +13,13 @@ class _SingleSelectionDemoState extends State<SingleSelectionDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios),
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
         title: Text("Single Selection"),
-        centerTitle: true,
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.black,
+        actions: [
+          Icon(Icons.notification_add_outlined),
+          Icon(Icons.menu)
+        ],
       ),
       body: ListView.builder(
         itemCount: 6,
@@ -30,12 +32,11 @@ class _SingleSelectionDemoState extends State<SingleSelectionDemo> {
             },
             selected: selectedIndex == index,
             selectedColor: Colors.white,
-            selectedTileColor: Colors.lightBlue,
-
-            leading: Icon(selectedIndex== index ? Icons.notification_add : Icons.percent),
-            title: Text("Selected Index: $selectedIndex"),
-            subtitle: Text("Index: $index"),
-            trailing: Icon(selectedIndex == index ? Icons.remove : Icons.add),
+            selectedTileColor: Colors.blue,
+            leading: Icon(selectedIndex == index ? Icons.person_2_outlined : Icons.person),
+            title: Text("Ahmed Tariq, $selectedIndex"),
+            subtitle: Text("Hello, How are you ?,$index"),
+            trailing: Text("5:10 PM"),
           );
         },
       ),
