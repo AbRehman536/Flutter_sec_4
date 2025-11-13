@@ -7,6 +7,7 @@ import 'package:flutter_sec_4/dialog_box.dart';
 import 'package:flutter_sec_4/floating_action_button.dart';
 import 'package:flutter_sec_4/grid_view.dart';
 import 'package:flutter_sec_4/grid_view_builder.dart';
+import 'package:flutter_sec_4/gridview_count.dart';
 import 'package:flutter_sec_4/list_tile_demo.dart';
 import 'package:flutter_sec_4/login_form.dart';
 import 'package:flutter_sec_4/login_form_validation.dart';
@@ -17,6 +18,7 @@ import 'package:flutter_sec_4/page_view.dart';
 import 'package:flutter_sec_4/row_column_demo.dart';
 import 'package:flutter_sec_4/single_selection.dart';
 import 'package:flutter_sec_4/stack.dart';
+import 'package:flutter_sec_4/staggered_gridview.dart';
 import 'package:flutter_sec_4/tab_Bar.dart';
 
 void main() {
@@ -49,7 +51,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: PageViewDemo(),
+      home: StaggeredGridviewDemo(),
     );
   }
 }

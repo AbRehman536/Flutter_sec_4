@@ -10,23 +10,19 @@ class GridViewBuilderDemo extends StatelessWidget {
         title: Text("Grid View"),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
+        centerTitle: true,
       ),
       body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20
 
           ),
-          itemCount: 7,
-          itemBuilder: (BuildContext context, int index) {
-            return
-                Container(
-                  color: Colors.orange,
-                  child: Text("Grid View"),);
-          },
-
-      ),
+        itemCount: 8,
+        itemBuilder: (BuildContext context, int index) {
+            return Container(color: Colors.red,);
+        },),
     );
   }
 }
