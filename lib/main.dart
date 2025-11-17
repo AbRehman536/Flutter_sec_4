@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: StaggeredGridviewDemo(),
+      home: DialogBoxDemo(),
     );
   }
 }
