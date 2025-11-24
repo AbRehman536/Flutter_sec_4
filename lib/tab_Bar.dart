@@ -16,7 +16,7 @@ class TabBarDemo extends StatelessWidget {
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(70),
+            preferredSize: Size.fromHeight(80),
             child: Container(
               color: Colors.white,
               child: Padding(
