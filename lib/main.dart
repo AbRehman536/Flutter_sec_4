@@ -4,6 +4,7 @@ import 'package:flutter_sec_4/asset_image.dart';
 import 'package:flutter_sec_4/bottom_sheet.dart';
 import 'package:flutter_sec_4/bottombar_demo.dart';
 import 'package:flutter_sec_4/curved_bottombar.dart';
+import 'package:flutter_sec_4/date_time_picker.dart';
 import 'package:flutter_sec_4/dialog_box.dart';
 import 'package:flutter_sec_4/floating_action_button.dart';
 import 'package:flutter_sec_4/grid_view.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: CurvedbarDemo(),
+      home: DateTimePicker(),
     );
   }
 }
