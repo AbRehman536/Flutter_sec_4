@@ -17,14 +17,21 @@ import 'package:flutter_sec_4/multiple_selection.dart';
 import 'package:flutter_sec_4/nested_row_column.dart';
 import 'package:flutter_sec_4/network_image.dart';
 import 'package:flutter_sec_4/page_view.dart';
+import 'package:flutter_sec_4/passing_parameters/screen_a.dart';
+import 'package:flutter_sec_4/providers/screen_1.dart';
+import 'package:flutter_sec_4/providers/user.dart';
 import 'package:flutter_sec_4/row_column_demo.dart';
 import 'package:flutter_sec_4/single_selection.dart';
 import 'package:flutter_sec_4/stack.dart';
 import 'package:flutter_sec_4/staggered_gridview.dart';
 import 'package:flutter_sec_4/tab_Bar.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context)=> UserProvider()),
+  ],
+  child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -53,7 +60,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: DateTimePicker(),
+      home: Screen1(),
     );
   }
 }
